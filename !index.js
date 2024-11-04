@@ -83,26 +83,3 @@ buttons.forEach(buttons => {
     outtercursor.classList.remove("shrink");
   })
 })
-
-// Add some interactivity
-document.addEventListener('DOMContentLoaded', () => {
-  // Animate skill bars
-  const skillBars = document.querySelectorAll('.progress-bar');
-  skillBars.forEach(bar => {
-    const progress = bar.dataset.progress;
-    bar.style.setProperty('--progress', `${progress}%`);
-  });
-
-  // Animate elements on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate-in');
-      }
-    });
-  });
-
-  document.querySelectorAll('.skill-card, .timeline-item').forEach((el) => {
-    observer.observe(el);
-  });
-});

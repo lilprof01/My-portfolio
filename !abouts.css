@@ -8,7 +8,6 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  min-height: 100vh;
   
   color: white;
 
@@ -31,7 +30,6 @@ body{
 .body{
   background-image: linear-gradient(320deg, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0.7) 80%, rgba(0, 0, 0, 0.5));
   background-attachment: fixed;
-  min-height: 100vh;
 }
 
 fieldset{
@@ -96,8 +94,8 @@ fieldset{
   flex-direction: column;
 
   position: fixed;
-  top: calc(100vh - 96vh);
-  right: 22px;
+  top: calc(100vh - 98vh);
+  right: 0;
 }
 
 .hamburger :hover{
@@ -181,192 +179,154 @@ fieldset{
   margin-top: 80px;
 }
 
-.project-body{
-  width: 80vw;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.title{
-  font-size: 2rem;
-  font-weight: 600;
-  color: white;
-
-  margin-bottom: 20px;
-
-  text-decoration: underline;
-}
-
-.cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  max-width: 1200px;
-  padding: 20px;
-}
-
-.project-card {
-  width: 400px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-  transform: scale(1.05);
-}
-
-.card-image img {
-  width: 100%;
-  height: 100%;
-  /* object-fit: cover; */
-}
-
-.card-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
+.about-me{
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
-  align-items: center;
-  text-align: left;
-  padding: 15px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
 
-.card-overlay div{
-  max-width: 90%;
+  width: 80vw;
   margin: 0 auto;
 }
 
-.project-card:hover .card-overlay {
-  opacity: 1;
+.details{
+  padding: 30px;
 }
 
-.card-overlay h3 {
-  font-size: 1.2em;
-  font-weight: bolder;
-  margin-bottom: 8px;
+.first{
+  flex: 1;
 }
 
-.card-overlay p {
-  font-size: 0.9em;
-  margin: 5px 0;
+.second{
+  flex: 1;
 }
 
-.link-div{
-  width: 100%;
-  margin: 0 auto;
-}
+.card {
+  width: 80vw;
+  background: #17171796;
+  transition: 1s ease-in-out;
+  clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
+  /* border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px; */
 
-.link{
-  font-style: italic;
-  position: relative;
-  font-weight: 800;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+
   font-size: larger;
 }
 
-.link a{
-  text-decoration: none;
+.card span {
+  font-weight: bold;
   color: white;
+  text-align: center;
+  display: block;
+  font-size: 1em;
 }
 
-.link a:hover{
+.card .info {
+  font-weight: 400;
+  color: white;
+  display: block;
+  text-align: center;
+  margin: 1em;
+}
+
+.card .img {
+  width: 4.8em;
+  height: 4.8em;
+  border-radius: 15px;
+  margin: auto;
+
+  z-index: -1;
+}
+
+.heading{
+  font-size: larger;
+  text-decoration: underline;
+}
+
+.card .share {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.card a {
+  color: white;
+  transition: .4s ease-in-out;
+}
+
+.card a:hover {
   color: #007bff;
 }
 
-.link ::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #007bff;
-  visibility: hidden;
-  transform: scaleX(0);
-  transition: all 0.3s ease-in-out;
+.card button {
+  padding: 0.8em 1.7em;
+  margin: 10px auto;
+  border-radius: 25px;
+  border: none;
+  font-weight: bold;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  transition: .4s ease-in-out;
 }
 
-.link :hover::before{
-  visibility: visible;
-  transform: scaleX(1);
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 20%;
+  margin: 0 auto;
 }
 
-.arrow {
-  display: inline-block;
-  animation: pointing 1.2s ease-in-out infinite;
+.card button:hover {
+  background: #007bff;
+  color: white;
 }
 
-@keyframes pointing {
-  0%, 100% {
-    transform: translateX(0);
+@media (min-width: 300px) and (max-width: 1200px) {
+  body{
+    position: relative;
+    padding: 0;
+    margin: 0;
+
+    height: 100vh;
   }
-  50% {
-    transform: translateX(5px);
-  }
 }
 
-/* Responsive Design for two-column layout */
-@media (min-width: 768px) {
-  .cards-container {
-    flex-direction: row;
-    gap: 20px;
+@media (max-width: 800px) {
+  .header-links a{
+   visibility: hidden;
   }
 
+  .card .img {
+    width: 4.8em;
+    height: 4.8em;
+    border-radius: 50%;
+    margin: auto;
+  
+    z-index: -1;
+  }
+  
+  .card img{
+    height: inherit;
+    width: inherit;
+
+    border-radius: inherit;
+  }
+
+}
+
+@media (min-width: 800px) {
   .hamburger{
     visibility: hidden;
   }
-}
 
-/* Responsive Design for smaller screens */
-@media (max-width: 767px) {
-  .cards-container {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .project-card {
-    width: 90%;
-    height: auto;
-    margin: auto;
-  }
-
-  .card-overlay {
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.85);
-    opacity: 1;
-    text-align: center;
-  }
-  
-  .card-overlay h3 {
-    font-size: 1em;
-  }
-
-  .card-overlay p {
-    font-size: 0.5em;
-  }
-
-  .header-links a{
-    visibility: hidden;
-   }
-
-   .inner-cursor{
-    visibility: hidden;
-  }
-
-  .outter-cursor{
-    visibility: hidden;
+  .card img{
+    opacity: 0.3;
   }
 }
 

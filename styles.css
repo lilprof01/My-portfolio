@@ -95,8 +95,8 @@ fieldset{
   flex-direction: column;
 
   position: fixed;
-  top: calc(100vh - 98vh);
-  right: 0;
+  top: calc(100vh - 96vh);
+  right: 22px;
 }
 
 .hamburger :hover{
@@ -250,7 +250,6 @@ fieldset{
   position: relative;
   font-weight: 800;
   font-size: larger;
-  
 }
 
 .link ::before {
@@ -269,6 +268,20 @@ fieldset{
 .link :hover::before{
   visibility: visible;
   transform: scaleX(1);
+}
+
+.arrow {
+  display: inline-block;
+  animation: pointing 1.2s ease-in-out infinite;
+}
+
+@keyframes pointing {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
 }
 
 .footer{
@@ -344,6 +357,14 @@ fieldset{
 @media (max-width: 800px) {
   .header-links a{
    visibility: hidden;
+  }
+
+  .inner-cursor{
+    visibility: hidden;
+  }
+
+  .outter-cursor{
+    visibility: hidden;
   }
 }
 

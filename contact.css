@@ -115,7 +115,7 @@ fieldset{
 }
 
 .contact-section p{
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: rgb(239, 232, 232);
 }
 
@@ -130,7 +130,7 @@ fieldset{
 .contact-form textarea{
   width: 100%;
   padding: 10px;
-  margin-top: 25px;
+  margin-top: 15px;
   background-color: #031f3ea1;
   border: 1px solid #0057b365;
   border-radius: 5px;
@@ -149,7 +149,7 @@ fieldset{
 }
 
 .contact-form button{
-  margin-top: 8px;
+  margin: 10px 0;
   padding: 10px 20px;
   background-color: #007bff;
   color: white;
@@ -161,6 +161,58 @@ fieldset{
 
 .contact-form button:hover{
   background-color: #0056b3;
+}
+
+.link-div{
+  width: 100%;
+  margin: 0 auto;
+}
+
+.link{
+  font-style: italic;
+  position: relative;
+  font-weight: 800;
+}
+
+.link a{
+  text-decoration: none;
+  color: white;
+}
+
+.link a:hover{
+  color: #007bff;
+}
+
+.link ::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #007bff;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.link :hover::before{
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.arrow {
+  display: inline-block;
+  animation: pointing 1.2s ease-in-out infinite;
+}
+
+@keyframes pointing {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
 }
 
 .share{
@@ -197,8 +249,8 @@ fieldset{
   flex-direction: column;
 
   position: fixed;
-  top: calc(100vh - 98vh);
-  right: 0;
+  top: calc(100vh - 96vh);
+  right: 22px;
 }
 
 .hamburger :hover{
@@ -324,6 +376,14 @@ fieldset{
 @media (max-width: 800px) {
   .header-links a{
    visibility: hidden;
+  }
+
+  .inner-cursor{
+    visibility: hidden;
+  }
+
+  .outter-cursor{
+    visibility: hidden;
   }
 }
 
