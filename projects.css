@@ -108,7 +108,7 @@ fieldset{
 .hamburger div{
   height: 5px;
   width: 30px;
-  background-color: grey;
+  background-color: #007bff;
   margin-bottom: 3px;
 }
 
@@ -257,7 +257,7 @@ fieldset{
   font-size: 1.2em;
   font-weight: bolder;
   margin-bottom: 8px;
-  color: #007bff;
+  /* color: #007bff; */
 }
 
 .card-overlay p {
@@ -348,7 +348,8 @@ fieldset{
     position: relative;
     background-color: rgba(0, 0, 0, 0.85);
     opacity: 1;
-    text-align: center;
+    /* text-align: center; */
+    padding: 0;
   }
   
   .card-overlay h3 {
