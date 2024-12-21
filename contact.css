@@ -6,7 +6,7 @@
 }
 
 body{
-  background: linear-gradient(320deg, rgba(255, 255, 255, 0.1) 90%, rgba(255, 255, 255, 1)), url(./assets/images/5641363.jpg);
+  /* background: linear-gradient(320deg, rgba(255, 255, 255, 0.1) 90%, rgba(255, 255, 255, 1)), url(./assets/images/5641363.jpg); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -30,10 +30,22 @@ body{
   }
 }
 
+.background{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./assets/images/5641363.jpg') no-repeat center center / cover;
+  filter: blur(5px);
+  z-index: -100;
+}
+
 .body{
-  background-image: linear-gradient(320deg, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0.7) 80%, rgba(0, 0, 0, 0.5));
+  background-image: linear-gradient(320deg, rgba(25, 25, 112, 0.5) 20%, rgba(0, 0, 0, 0.7) 80%, rgba(25, 25, 112, 0.5));
   background-attachment: fixed;
   min-height: 100vh;
+  position: relative;
 }
 
 fieldset{
@@ -45,6 +57,14 @@ fieldset{
   border-color: rgb(245, 245, 245);
   overflow: hidden;
   z-index: 1;
+}
+
+legend img{
+  transition: all ease-out 0.7s;
+}
+
+legend img:hover{
+  transform: rotate(270deg);
 }
 
 #header{
@@ -215,18 +235,18 @@ fieldset{
   }
 }
 
-.share{
+.footer{
   display: flex;
   justify-content: center;
   gap: 1em;
 }
 
-.share a{
+.footer a{
   color: white;
   transition: .4s ease-in-out;
 }
 
-.share a:hover{
+.footer a:hover{
   color: #007bff;
 }
 
@@ -245,12 +265,19 @@ fieldset{
 }
 
 .hamburger{
+  border: 2px solid black;
+  padding: 4px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 0 4px #007bff;
 
   position: fixed;
-  top: calc(100vh - 96vh);
+  top: calc(100vh - 98vh);
   right: 22px;
+  z-index: 100;
 }
 
 .hamburger :hover{
@@ -258,10 +285,9 @@ fieldset{
 }
 
 .hamburger div{
-  height: 5px;
+  height: 4px;
   width: 30px;
-  background-color: #0056b3;
-  margin-bottom: 3px;
+  background-color: #007bff;
 }
 
 .menu-items{
@@ -276,9 +302,11 @@ fieldset{
 
   width: 100vw;
   height: 100vh;
-  background-image: linear-gradient(180deg, rgba(0, 0, 0), rgba(0, 0, 0), rgba(0, 0, 0, 0.9));
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85));
 
   z-index: 100;
+  backdrop-filter: blur(5px);
+
 
   visibility: hidden;
 }
@@ -373,6 +401,19 @@ fieldset{
   transition: width 0.5s, height 0.5s;
 }
 
+.blur{
+  height: 300px;
+  width: 300px;
+  background-color: #007bff;
+  border-radius: 50%;
+  position: fixed;
+  z-index: -1;
+  left: 10px;
+  transform: translate(-50%, -50%);
+  transition: ease-in-out, 1s;
+  filter: blur(100px);
+}
+
 @media (max-width: 800px) {
   .header-links a{
    visibility: hidden;
@@ -390,5 +431,28 @@ fieldset{
 @media (min-width: 800px) {
   .hamburger{
     visibility: hidden;
+  }
+}
+
+@media ((min-width: 300px) and (max-width: 1200px)) {
+  .link-div{
+    margin-bottom: 50px;
+  }
+  
+  .footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 100vw;
+    height: 40px;
+    padding: 0;
+    margin: 20px auto 0px auto;
+
+    position: fixed;
+    bottom: 0;
+    left: calc(100vw - 100vw);
+    backdrop-filter: blur(50px);
+    box-shadow: 0 -3px 10px black;
   }
 }

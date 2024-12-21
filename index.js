@@ -38,6 +38,7 @@ cancelIcon.addEventListener("mouseleave", ()=>{
 // cursor animation code
 let innercursor = document.querySelector(".inner-cursor");
 let outtercursor = document.querySelector(".outter-cursor");
+let blurFilter = document.querySelector(".blur");
 
 document.addEventListener("mousemove", moveCursor);
 
@@ -49,6 +50,8 @@ function moveCursor(e) {
   innercursor.style.top = `${y}px`;
   outtercursor.style.left = `${x}px`;
   outtercursor.style.top = `${y}px`;
+  blurFilter.style.left = `${x}px`;
+  blurFilter.style.top = `${y}px`;
 }
 
 let link = Array.from(document.querySelectorAll("a"));
@@ -91,18 +94,5 @@ document.addEventListener('DOMContentLoaded', () => {
   skillBars.forEach(bar => {
     const progress = bar.dataset.progress;
     bar.style.setProperty('--progress', `${progress}%`);
-  });
-
-  // Animate elements on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate-in');
-      }
-    });
-  });
-
-  document.querySelectorAll('.skill-card, .timeline-item').forEach((el) => {
-    observer.observe(el);
   });
 });
