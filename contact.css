@@ -265,6 +265,7 @@ legend img:hover{
 }
 
 .hamburger{
+  background-color: black;
   border: 2px solid black;
   padding: 4px;
   display: flex;
