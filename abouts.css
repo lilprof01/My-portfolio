@@ -306,7 +306,7 @@ legend img:hover{
   height: 200px;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid var(--primary-color);
+  border: 3px solid red;
   position: relative;
 }
 
@@ -356,7 +356,7 @@ legend img:hover{
   left: 0;
   top: 0;
   height: 100%;
-  background: var(--primary-color);
+  background: red;
   width: var(--progress);
   animation: progress 1s ease-out;
 }
@@ -376,7 +376,7 @@ legend img:hover{
   content: '';
   position: absolute;
   width: 3px;
-  background-color: var(--primary-color);
+  background-color: red;
   top: 50px;
   bottom: 0;
   left: 0;
